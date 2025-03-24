@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app_flutter/features/daily_news/presentation/bloc/article/article_bloc.dart';
 import 'package:news_app_flutter/features/daily_news/presentation/bloc/article/article_state.dart';
 import '../../widget/loader.dart';
-import '../../widget/news_item.dart';
 
 class DailyNews extends StatelessWidget {
   const DailyNews({super.key});
@@ -24,12 +23,10 @@ class DailyNews extends StatelessWidget {
             }
             if (state is ArticlesDone) {
               return ListView.builder(
-                  itemBuilder: (context, index){
-                    return NewsItem(
-                        articleEntity : state.article![index]
-                    );
-                  },
-                  itemCount: state.article!.length,
+                itemBuilder: (context, index) {
+                  return Text("item $index");
+                },
+                itemCount: state.article!.length,
               );
             }
             return const SizedBox();

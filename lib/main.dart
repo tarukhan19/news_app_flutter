@@ -11,7 +11,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await initializeDependencies();
-  runApp(const MyApp());
+  runApp(BlocProvider(create: (_) => sl<ArticleBloc>(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -23,10 +23,10 @@ class MyApp extends StatelessWidget {
     return BlocProvider<ArticleBloc>(
       create: (context) => sl()..add(const GetArticles()),
       child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme.darkThemeMode,
-          title: 'Daily News',
-          home: DailyNews()
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.darkThemeMode,
+        title: 'Daily News',
+        home: DailyNews(),
       ),
     );
   }

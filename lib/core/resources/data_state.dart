@@ -5,7 +5,7 @@ it communicate with network call. this wrapper class will use to wrap our entire
  */
 abstract class DataState<T> {
   final T? data;
-  final DioError? error;
+  final DioException? error;
 
   DataState({this.data, this.error});
 }
@@ -15,5 +15,5 @@ class DataSuccess<T> extends DataState<T> {
 }
 
 class DataFailed<T> extends DataState<T> {
-  DataFailed(DioError error) : super(error: error);
+  DataFailed(DioException error) : super(error: error);
 }

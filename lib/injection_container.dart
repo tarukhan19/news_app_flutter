@@ -9,10 +9,10 @@ import 'package:news_app_flutter/features/daily_news/presentation/bloc/article/a
 final sl = GetIt.instance;
 
 Future<void> initializeDependencies() async {
-  sl.registerSingleton<Dio>(Dio());
-  sl.registerSingleton<NewsApiService>(NewsApiService(sl()));
-  sl.registerSingleton<ArticleRepository>(ArticleRepositoryImpl(sl()));
-  sl.registerSingleton<GetArticleUseCase>(GetArticleUseCase(sl()));
-
-  sl.registerFactory<ArticleBloc>(() => ArticleBloc(sl()));
+  sl
+    ..registerSingleton<Dio>(Dio())
+    ..registerSingleton<NewsApiService>(NewsApiService(sl()))
+    ..registerSingleton<ArticleRepository>(ArticleRepositoryImpl(sl()))
+    ..registerSingleton<GetArticleUseCase>(GetArticleUseCase(sl()))
+    ..registerFactory<ArticleBloc>(() => ArticleBloc(sl()));
 }
