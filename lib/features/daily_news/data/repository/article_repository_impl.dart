@@ -23,7 +23,11 @@ class ArticleRepositoryImpl extends ArticleRepository {
       );
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
-        return DataSuccess(httpResponse.data);
+        final data =httpResponse.response.data;
+        final articlesList = data['articles'] as List<dynamic>;
+        final articles = ArticleModel.fromJsonList(articlesList);
+
+        return DataSuccess(articles);
       } else {
         return DataFailed(
           DioException(

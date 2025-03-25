@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app_flutter/features/daily_news/presentation/bloc/article/article_bloc.dart';
 import 'package:news_app_flutter/features/daily_news/presentation/bloc/article/article_state.dart';
 import '../../widget/loader.dart';
+import '../../widget/news_item.dart';
 
 class DailyNews extends StatelessWidget {
   const DailyNews({super.key});
@@ -24,7 +25,11 @@ class DailyNews extends StatelessWidget {
             if (state is ArticlesDone) {
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  return Text("item $index");
+                  if (state.article == null) {
+                    return SizedBox(); // ✅ Returns an empty widget instead of crashing
+                  }
+                  // print("articles >>>>>>>>>>>  ${state.article![1]}");
+                  return NewsItem(articleEntity: state.article![index],);
                 },
                 itemCount: state.article!.length,
               );

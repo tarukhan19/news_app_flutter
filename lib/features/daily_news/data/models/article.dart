@@ -2,14 +2,13 @@ import 'package:news_app_flutter/features/daily_news/domain/entities/articles.da
 
 class ArticleModel extends ArticleEntity {
   const ArticleModel({
-    int? id,
-    String? author,
-    String? title,
-    String? description,
-    String? url,
-    String? urlToImage,
-    String? publishedAt,
-    String? content,
+    super.author,
+    super.title,
+    super.description,
+    super.url,
+    super.urlToImage,
+    super.publishedAt,
+    super.content,
   });
 
   factory ArticleModel.fromJson(Map<String, dynamic> map) {
@@ -22,5 +21,9 @@ class ArticleModel extends ArticleEntity {
       publishedAt: map['publishedAt'] ?? '',
       content: map['content'] ?? '',
     );
+  }
+
+  static List<ArticleModel> fromJsonList(List<dynamic> jsonList) {
+    return jsonList.map((item) => ArticleModel.fromJson(item as Map<String, dynamic>)).toList();
   }
 }

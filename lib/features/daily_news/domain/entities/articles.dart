@@ -10,7 +10,6 @@ If we don't use Equatable, we must manually override == and hashCode:
 Dart will compare objects based on their values, not memory references.
  */
 class ArticleEntity extends Equatable {
-  final int? id;
   final String? author;
   final String? title;
   final String? description;
@@ -29,7 +28,6 @@ class ArticleEntity extends Equatable {
                           we can use square brackets [] to make parameters optional
    */
   const ArticleEntity({
-    this.id,
     this.author,
     this.title,
     this.description,
@@ -41,7 +39,6 @@ class ArticleEntity extends Equatable {
 
   @override
   List<Object?> get props => [
-    id,
     author, // Fixed typo
     title,
     description,
