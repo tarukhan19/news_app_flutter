@@ -7,6 +7,7 @@ import 'package:news_app_flutter/features/daily_news/data/models/article.dart';
 import 'package:news_app_flutter/features/daily_news/domain/repository/article_repository.dart';
 
 import '../../../../core/constant/constants.dart';
+import '../models/new_response.dart';
 
 class ArticleRepositoryImpl extends ArticleRepository {
   final NewsApiService _newsApiService;
@@ -23,11 +24,10 @@ class ArticleRepositoryImpl extends ArticleRepository {
       );
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
-        final data =httpResponse.response.data;
-        final articlesList = data['articles'] as List<dynamic>;
-        final articles = ArticleModel.fromJsonList(articlesList);
-
-        return DataSuccess(articles);
+        final newsResponse = NewsResponseModel.fromJson(
+          httpResponse.response.data,
+        );
+        return DataSuccess(newsResponse.articles);
       } else {
         return DataFailed(
           DioException(

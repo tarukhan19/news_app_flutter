@@ -22,8 +22,4 @@ class ArticleModel extends ArticleEntity {
       content: map['content'] ?? '',
     );
   }
-
-  static List<ArticleModel> fromJsonList(List<dynamic> jsonList) {
-    return jsonList.map((item) => ArticleModel.fromJson(item as Map<String, dynamic>)).toList();
-  }
 }
