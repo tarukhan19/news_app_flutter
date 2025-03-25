@@ -3,7 +3,7 @@ import 'package:news_app_flutter/features/daily_news/domain/entities/articles.da
 class ArticleModel extends ArticleEntity {
   const ArticleModel({
     int? id,
-    String? auther,
+    String? author,
     String? title,
     String? description,
     String? url,
@@ -14,7 +14,7 @@ class ArticleModel extends ArticleEntity {
 
   factory ArticleModel.fromJson(Map<String, dynamic> map) {
     return ArticleModel(
-      auther: map['author'] ?? '',
+      author: map['author'] ?? '',
       title: map['title'] ?? '',
       description: map['description'] ?? '',
       url: map['url'] ?? '',

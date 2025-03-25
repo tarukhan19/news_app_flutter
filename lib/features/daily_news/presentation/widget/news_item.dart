@@ -42,7 +42,7 @@ class NewsItem extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'by ${articleEntity!.auther!}',
+                      'by ${articleEntity!.author!}',
                       style: TextStyle(color: Colors.grey[600]),
                     ),
                   ],
