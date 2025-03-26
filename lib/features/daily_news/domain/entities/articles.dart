@@ -8,7 +8,15 @@ type of data api has, will define here.
 
 If we don't use Equatable, we must manually override == and hashCode:
 Dart will compare objects based on their values, not memory references.
- */
+
+📌 Named parameter ({}) : allow to specify arguments explicitly by name.
+                     parameters are optional by default.
+                     By default, named parameters are optional.
+                     we can make them required using the required keyword.
+
+📌 Positional parameters () : It is passed in order, just like traditional function parameters.
+                          we can use square brackets [] to make parameters optional
+   */
 class ArticleEntity extends Equatable {
   final String? author;
   final String? title;
@@ -18,15 +26,6 @@ class ArticleEntity extends Equatable {
   final String? publishedAt;
   final String? content;
 
-  /*
-📌 Named parameter ({}) : allow to specify arguments explicitly by name.
-                     parameters are optional by default.
-                     By default, named parameters are optional.
-                     we can make them required using the required keyword.
-
-📌 Positional parameters () : It is passed in order, just like traditional function parameters.
-                          we can use square brackets [] to make parameters optional
-   */
   const ArticleEntity({
     this.author,
     this.title,

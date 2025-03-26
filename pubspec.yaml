@@ -49,6 +49,7 @@ dependencies:
   flutter_hooks: ^0.18.3
   # cached image_picker
   cached_network_image: ^3.2.0
+  injectable: ^2.3.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -61,6 +62,7 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   retrofit_generator: ^9.1.9
   build_runner: ^2.4.7
+  injectable_generator: ^2.4.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

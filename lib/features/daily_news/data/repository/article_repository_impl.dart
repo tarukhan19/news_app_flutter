@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:news_app_flutter/core/resources/data_state.dart';
 import 'package:news_app_flutter/features/daily_news/data/data_source/remote/news_api_service.dart';
 import 'package:news_app_flutter/features/daily_news/data/models/article.dart';
@@ -9,6 +10,7 @@ import 'package:news_app_flutter/features/daily_news/domain/repository/article_r
 import '../../../../core/constant/constants.dart';
 import '../models/new_response.dart';
 
+@LazySingleton(as: ArticleRepository)
 class ArticleRepositoryImpl extends ArticleRepository {
   final NewsApiService _newsApiService;
 
