@@ -5,7 +5,6 @@ import 'package:news_app_flutter/features/daily_news/presentation/screen/home/da
 import 'package:news_app_flutter/injection_container.dart';
 
 import 'config/theme/theme.dart';
-import 'features/daily_news/presentation/bloc/article/article_event.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
