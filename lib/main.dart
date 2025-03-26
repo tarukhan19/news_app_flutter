@@ -12,7 +12,7 @@ void main() async {
 
   await initializeDependencies();
   runApp(BlocProvider(
-      create: (_) => sl<ArticleBloc>()..add(const GetArticles()),
+      create: (_) => sl<ArticleBloc>(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: AppTheme.darkThemeMode,
