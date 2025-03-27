@@ -10,7 +10,7 @@ import 'package:news_app_flutter/features/daily_news/domain/repository/article_r
 import '../../../../core/constant/constants.dart';
 import '../models/new_response.dart';
 
-@LazySingleton(as: ArticleRepository)
+@Injectable(as: ArticleRepository)
 class ArticleRepositoryImpl extends ArticleRepository {
   final NewsApiService _newsApiService;
 

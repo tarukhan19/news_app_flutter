@@ -31,8 +31,8 @@ extension GetItInjectableX on _i174.GetIt {
     _i526.EnvironmentFilter? environmentFilter,
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
-    final registerModule = _$RegisterModule();
-    gh.lazySingleton<_i361.Dio>(() => registerModule.dio);
+    final dioProvider = _$DioProvider();
+    gh.lazySingleton<_i361.Dio>(() => dioProvider.dio);
     gh.lazySingleton<_i62.NewsApiService>(
       () => _i62.NewsApiService(gh<_i361.Dio>()),
     );
@@ -49,4 +49,4 @@ extension GetItInjectableX on _i174.GetIt {
   }
 }
 
-class _$RegisterModule extends _i772.RegisterModule {}
+class _$DioProvider extends _i772.DioProvider {}

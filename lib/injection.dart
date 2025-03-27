@@ -14,6 +14,8 @@ registering all dependencies.
 
 ✅ @lazySingleton => Lazy singleton means Dio is only created when it is needed for the first time.
 
+✅ @Inject(as:) to provide a solid implementation for an abstract class.
+
  */
 final sl = GetIt.instance;
 
@@ -21,7 +23,7 @@ final sl = GetIt.instance;
 Future<void> configureDependencies() async => sl.init();
 
 @module
-abstract class RegisterModule {
+abstract class DioProvider {
   @lazySingleton
   Dio get dio => Dio();
 }
