@@ -14,7 +14,9 @@ registering all dependencies.
 
 ✅ @lazySingleton => Lazy singleton means Dio is only created when it is needed for the first time.
 
-✅ @Inject(as:) to provide a solid implementation for an abstract class.
+✅ @Injectable(as:) to provide a solid implementation for an abstract class.
+
+✅ @Injectable to mark a class as injectable.
 
  */
 final sl = GetIt.instance;
